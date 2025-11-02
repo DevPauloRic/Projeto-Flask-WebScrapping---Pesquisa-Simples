@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Pesquisa e Gráfico</title>
+</head>
+<body>
+  <h1>Pesquisar Termo</h1>
+  <form method="post">
+    <input type="text" name="termo" placeholder="Digite algo" required>
+    <button type="submit">Pesquisar</button>
+  </form>
+
+  <h2>Top 5 Resultados:</h2>
+  <ul>
+    {% for r in head_5 %}
+      <li>{{ r }}</li> --> Recebendo o r do back e mostrando na tela
+    {% endfor %}
+  </ul>
+
+  <h2>Top 3 Palavras Mais Frequentes:</h2>
+  <ol>
+    {% for palavra, freq in top3 %}
+      <li><strong>{{ palavra }}</strong> — {{ freq }}x</li> --> Mostrando a palavra e a frequência em que aparece
+    {% endfor %}
+  </ol>
+
+  {% if grafico %}
+    <h2>Gráfico Interativo:</h2>
+    {{ grafico|safe }} --> Renderizando o gráfico interativo
+  {% endif %}
+</body>
+</html>
