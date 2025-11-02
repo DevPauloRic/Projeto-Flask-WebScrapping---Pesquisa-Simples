@@ -13,7 +13,7 @@ import plotly.express as px
 from collections import Counter
 import nltk
 from nltk.corpus import stopwords
-#Baixa stopwords do nltk se necessário, provavelmente sim comp. senac ruim
+#Baixa stopwords do nltk se necessário, provavelmente sim.
 try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
